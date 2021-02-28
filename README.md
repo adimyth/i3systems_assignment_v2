@@ -159,3 +159,9 @@ To choose between multiple models, change *model_name* in `config` to one of the
 * Python dependancy/project management: `poetry`
 * Data/model versioning/management: `dvc`
 * Auto-linting: `black`
+
+## Next Steps
+* Use some pooling strategy over the final embeddings
+* AdamWeightDecay weight warmup
+* BlueBERT
+* BioMed-RoBERTa-base

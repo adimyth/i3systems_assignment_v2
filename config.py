@@ -2,11 +2,11 @@ from attrdict import AttrDict  # type: ignore
 
 configs_local = {
     "random_state": 42,
-    "max_len": 64,
-    "train_batch_size": 32,
+    "max_len": 256,
+    "train_batch_size": 16, # 16, 32
     "eval_batch_size": 8,
-    "epochs": 3,
-    "lr": 3e-5,
+    "epochs": 3,    # 2, 3, 4
+    "lr": 3e-5,  # 5e-5, 3e-5, 2e-5
     "model_name": "bert-base-uncased",
     "datapath": "data/processed/",
 }
