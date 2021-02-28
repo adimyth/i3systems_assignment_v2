@@ -14,7 +14,7 @@ class BaseModel(Model):
 
     @tf.function
     def call(self, inputs):
-        # last_hidden_state -> (batch_size, sequence_length, hidden_size)
+        # last_hidden_state -> (batch_size, sequence_length, hidden_size) -> (batch_size, config.max_len, 768)
         last_hidden_state = self.base_model(inputs)[0]
         # cls_embeddings -> (batch_size, hidden_size)
         cls_embedd = last_hidden_state[:, 0, :]

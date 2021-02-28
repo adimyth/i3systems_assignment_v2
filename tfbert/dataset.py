@@ -9,6 +9,12 @@ class BertDataset:
         self.batch_size = batch_size
 
     def encode_data(self, sentences):
+        """
+        1. Add special tokens to separate sentences and do classification [CLS], [SEP], [UNK], [PAD]
+        2. Pass sequences of constant length (introduce padding)
+        3. Create array of 0s (pad token) and 1s (real token) called attention mask
+        4. max_len - BERT works with fixed-length sequences. Max length is 512 tokens
+        """
         tokenizer = AutoTokenizer.from_pretrained(self.model_name)
         encoded = tokenizer.batch_encode_plus(
             sentences,
