@@ -116,6 +116,19 @@ Accuracy is the number of correct classifications divided by total number of sam
 The Matthews correlation coefficient (MCC) is used as a measure of the quality of binary and multiclass classifications. It takes into account true and false positives and negatives and is generally regarded as a balanced measure which can be used even if the classes are of very different sizes.
 Ranges between -1 and +1.  A coefficient of +1 represents a perfect prediction, 0 an average random prediction and -1 an inverse prediction
 
+## Results
+Training
+```
+Accuracy - 0.39
+MCC - 0.31
+```
+
+Validation
+```
+Accuracy - 0.34
+MCC - 0.26
+```
+
 ## Getting Started
 All the experiments are run on `python 3.8.0`.
 
