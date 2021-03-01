@@ -175,28 +175,28 @@ To choose between multiple models, change *model_name* in `config` to one of the
 
 ## Project Structure
 ```
-├── README.md          				<- Project Description
-├── config.py          				<- Controls configuration for model tuning
+├── README.md			<- Project Description
+├── config.py			<- Controls configuration for model tuning
 ├── data
-│   ├── interim          			<- Intermediate Data
+│   ├── interim			<- Intermediate Data
 │   │   └── processed_data.csv
-│   ├── processed				 	<- Final processed Data
+│   ├── processed			<- Final processed Data
 │   │   ├── train.csv
 │   │   └── valid.csv
-│   └── raw          				<- Raw Data shared
+│   └── raw			<- Raw Data shared
 │       └── Case_Study_Data.csv
-├── main.py          				<- Script to run training
-├── pyproject.toml          		<- pypoetry package listing
+├── main.py				<- Script to run training
+├── pyproject.toml		<- pypoetry package listing
 ├── src
-│   ├── process.py					<- Processing Class. Removes stopwords, lowercases, lemmatization, etc
-│   └── split.py					<- Splits processed data into train & validation data
+│   ├── process.py			<- Processing Class. Removes stopwords, lowercases, lemmatization, etc
+│   └── split.py			<- Splits processed data into train & validation data
 └── tfbert
-    ├── dataset.py					<- Encodes data & creates tf.Data object
-    ├── loss.py						<- Defines loss function to minimize
-    ├── medical_data.py				<- Contains class to train the model
-    ├── metrics.py					<- Defines metric to evaluate
-    ├── models.py					<- Script to create huggingface transformer model object
-    └── utils.py					<- Additional Script
+    ├── dataset.py			<- Encodes data & creates tf.Data object
+    ├── loss.py				<- Defines loss function to minimize
+    ├── medical_data.py		<- Contains class to train the model
+    ├── metrics.py			<- Defines metric to evaluate
+    ├── models.py			<- Script to create huggingface transformer model object
+    └── utils.py			<- Contains utility functions
 ```
 
 ## General
