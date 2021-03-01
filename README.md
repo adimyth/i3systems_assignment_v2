@@ -129,6 +129,12 @@ Accuracy - 0.34
 MCC - 0.26
 ```
 
+## Next Steps
+* Use some pooling strategy over the final embeddings
+* AdamWeightDecay weight warmup
+* BlueBERT
+* BioMed-RoBERTa-base
+
 ## Getting Started
 All the experiments are run on `python 3.8.0`.
 
@@ -167,14 +173,34 @@ To choose between multiple models, change *model_name* in `config` to one of the
 * `distilbert-base-uncased`
 * `roberta-base`
 
+## Project Structure
+```
+├── README.md          				<- Project Description
+├── config.py          				<- Controls configuration for model tuning
+├── data
+│   ├── interim          			<- Intermediate Data
+│   │   └── processed_data.csv
+│   ├── processed				 	<- Final processed Data
+│   │   ├── train.csv
+│   │   └── valid.csv
+│   └── raw          				<- Raw Data shared
+│       └── Case_Study_Data.csv
+├── main.py          				<- Script to run training
+├── pyproject.toml          		<- pypoetry package listing
+├── src
+│   ├── process.py					<- Processing Class. Removes stopwords, lowercases, lemmatization, etc
+│   └── split.py					<- Splits processed data into train & validation data
+└── tfbert
+    ├── dataset.py					<- Encodes data & creates tf.Data object
+    ├── loss.py						<- Defines loss function to minimize
+    ├── medical_data.py				<- Contains class to train the model
+    ├── metrics.py					<- Defines metric to evaluate
+    ├── models.py					<- Script to create huggingface transformer model object
+    └── utils.py					<- Additional Script
+```
+
 ## General
 * Managing Python version: `asdf`
 * Python dependancy/project management: `poetry`
 * Data/model versioning/management: `dvc`
 * Auto-linting: `black`
-
-## Next Steps
-* Use some pooling strategy over the final embeddings
-* AdamWeightDecay weight warmup
-* BlueBERT
-* BioMed-RoBERTa-base
